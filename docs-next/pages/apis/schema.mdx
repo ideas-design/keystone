@@ -2,8 +2,28 @@ import { Markdown } from '../../components/Page';
 
 # Schema API
 
-```
-import type { ListSchemaConfig } from '@keystone-next/types';
+```typescript
+import { config, createSchema, list } from '@keystone-next/keystone/schema';
+
+export default config({
+  lists: createSchema({
+    ListName: list({
+      fields: { ... },
+      access: { ... },
+      ui: { ... },
+      hooks: { ... },
+      description: '...',
+      graphql: { ... },
+      plugins: [ ... ],
+      label: '...',
+      singular: '...',
+      plural:: '...',
+      idField: { ... },
+    }),
+    ...
+  });
+  ...
+});
 ```
 
 (coming soon)
